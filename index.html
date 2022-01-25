@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Home - Desafio Final - Agricultura</title>
+           
+        
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/docskimmer.css" type="text/css">
+
+    
+  
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+  </head>
+
+  <body>
+    <a class="skiptocontent" href="#maincontent" title="Skip to content (when browsing via audio)" accesskey="2" tabindex="1">skip to main content</a>
+    <div id="top" class="wrapper">
+    <header class="header-main" role="banner">
+  
+     <h2 class="header-main__heading"><a class="header-main__link" href=".">Desafio Final - Agricultura</a></h2>
+  
+</header>
+
+    
+        
+  <form class="form form--search" id="content_search" action="./search.html" method="get" role="search">
+    <div class="form-group">
+      <label class="hidden" for="mkdocs-search-query">Search for:</label>
+      <input type="search" aria-label="Search" class="form__input" name="q" id="mkdocs-search-query" placeholder="Search the docs for..." tabindex="3"> <button type="submit" class="form__btn-submit">Search</button>
+    </div>
+  </form>
+
+    
+    
+    
+
+<nav class="nav-main" aria-label="Main menu" role="navigation">
+  <ul class="nav-main__level" role="menubar">
+    
+      
+          <li class="nav-main__item nav-main__item--current" role="menuitem">
+              <a class="nav-main__link nav-main__link--current" href="."><span class="visually-hidden">Current: </span> Home</a>
+          </li>
+      
+    
+      
+          <li class="nav-main__item" role="menuitem">
+              <a class="nav-main__link" href="brazil.html">Análise gráfica</a>
+          </li>
+      
+    
+
+    
+    
+  </ul>
+</nav>
+
+    
+    <!-- BEGIN subnav -->
+    
+    
+      
+    
+      
+    
+
+    <button class="menu-hamburger" data-js="menuOpenCtrl" aria-label="Open menu table of contents for this page" type="button" title="Menu">&#9776; open</button>
+    <!-- END subnav -->
+    
+   
+     <main class="maincontent" data-js="mainContent" role="main">
+      <h1 id="soulcode-academy">SoulCode Academy</h1>
+<h2 id="documentacao-do-projeto-final-agricultura">Documentação do Projeto Final - Agricultura</h2>
+<p><br>
+<strong> Turma BC8 - Engenharia de Dados </strong></p>
+<h4 id="integrantes-do-grupo">Integrantes do grupo:</h4>
+<p><strong> Eduardo Teles | Joyce Meireles | Juliana Maciel | Sandro Gonçalves | Wesley Aranha </strong></p>
+<h3 id="case-do-projeto">Case do Projeto:</h3>
+<p>O objetivo desse projeto é reunir Datasets do tema agricultura e desenvolvimento rural do Brasil, realizar o processo de ETL e usar os dados para mostrar as vantagens da agricultura 4.0, realizando uma migração de dados em um banco relacional (Postgre) para um banco não relacional (Cassandra), utilizando a plataforma em nuvem do Google (Googlo Cloud Platform - GCP) e a utilização da interface PySpark para a leitura dos registros, e com isso, extraír as informações para analisar e obter insights que ajudem na tomada de decisão de um possível projeto ou empresa.</p>
+<h3 id="etapas-do-projeto">Etapas do projeto:</h3>
+<p>Todo o projeto foi construído na Google Cloud Platform, seguindos as etapas abaixo:</p>
+<ol>
+<li>Escolha das tecnologias/ferramentas utilizadas</li>
+<li>Escolha dos Datasets</li>
+<li>Criação do BD Postgre</li>
+<li>Tratamento inicial dos datasets e inserção no Postgre</li>
+<li>Seleção dos dados no Postgre e criação dos Parquet</li>
+<li>Criação do BD Cassandra</li>
+<li>Inserção dos Parquet no Cassandra</li>
+<li>Análise e criação de gráficos</li>
+<li>Documentação </li>
+</ol>
+<p><br></p>
+<h4 id="1-tecnologiasferramentas-utilizadas-no-projeto"><strong>1-</strong> Tecnologias/Ferramentas utilizadas no projeto:</h4>
+<ul>
+<li>O Banco de dados relacional utilizado foi o <strong>Postgre</strong>;</li>
+</ul>
+<p><strong>Vantagens do Postgre sobre o MySQL</strong></p>
+<p>Foi escolhido o Postgre  por sua escalabilidade e robustez,suporta bases de dados grandes, complexas com  tamanhos ilimitados de linhas, bancos de dados e tabelas (até 16TB), aceita vários tipos de sub-consultas, possui mais tipos de dados e conta com um bom mecanismo de FAILSAVE (Segurança contra falhas, por exemplo no desligamento repentino do sistema), e garante escalabilidade e confiança.</p>
+<p><a href="https://www.devmedia.com.br/postgresql-x-mysql-qual-escolher/3923">Fonte da informação (clique aqui)</a></p>
+<ul>
+<li>O Banco de dados não relacional utilizado foi o <strong>Cassandra</strong>;</li>
+</ul>
+<p><strong>Vantagens do Cassandra sobre o MongoDB</strong></p>
+<p>Se você trabalha com uma grande quantidade de dados e precisa de velocidade para armazenar esses dados, você pode escolher o Cassandra.</p>
+<p>Se você precisa de uma rápida leitura dos dados, os dois bancos são ideais para você.</p>
+<p>Se você já tem conhecimentos em SQL e quer continuar a utilizar uma linguagem bem semelhante, você pode escolher o Cassandra.</p>
+<p>Se você vai trabalhar com uma grande quantidade de dados e precisa de uma grande velocidade de gravação e leitura, você pode escolher o Cassandra.</p>
+<p><a href="https://www.alura.com.br/artigos/cassandra-ou-mongodb-qual-a-melhor-escolha-para-o-meu-projeto#:~:text=Se%20voc%C3%AA%20precisa%20de%20Flexibilidade,voc%C3%AA%20pode%20escolher%20o%20Cassandra">Fonte da informação (clique aqui)</a></p>
+<ul>
+<li>
+<p>O módulo utilizado para a  conexão com o Postgre foi o <strong>Psycopg2</strong>;</p>
+</li>
+<li>
+<p>A API <strong>JDBC</strong> foi utilizada para a conexão com o Postgre e Cassandra;</p>
+</li>
+</ul>
+<p>A JDBC (Java Database Connectivity), faz o envio de instruções SQL para qualquer banco de dados relacional, desde que haja um driver que corresponda ao mesmo presente.</p>
+<p>Outra das vantagens da JDBC é o fato dela funcionar como uma camada de abstração de dados. Independente do SGBD utilizado, a API será a mesma, facilitando muito a vida dos programadores caso haja a necessidade de uma migração de banco.</p>
+<p><a href="http://www.linhadecodigo.com.br/artigo/1711/java-acesso-a-dados-usando-jdbc.aspx#:~:text=A%20JDBC%20Java%20Database%20Connectivity,por%20ser%20o%20mais%20recomendado">Fonte da informação (clique aqui)</a></p>
+<ul>
+<li>
+<p>O módulo do <strong>Pandas</strong> no Python foi utilizado para o tratamento dos datasets;</p>
+</li>
+<li>
+<p>A interface <strong>Pyspark</strong> foi utilizada para criar os parquet e tratar os dados;</p>
+</li>
+</ul>
+<p>O Apache Spark é uma engine de computação unificada e um conjunto de bibliotecas para processamento de dados paralelos em clusters de computadores.</p>
+<p>Uma das grandes vantagens do Spark é ser capaz de trabalhar de forma distribuída. Isso significa que se tratando de conjuntos de dados muito grandes ou quando a entrada de novos dados acontece de forma muito rápida, pode se tornar demais para um único computador. É aqui que entra a computação distribuída. Em vez de tentar processar um enorme conjunto de dados, essas tarefas são divididas entre diversas máquinas que estão em constante comunicação entre si. Em um sistema de computação distribuído, cada computador individual é chamado de nó (node) e a coleção de todos eles é chamada de cluster.</p>
+<p>Muito da popularidade do Spark se deve aos fatores listados abaixo:
+- Suporta diferentes linguagens de programação como Java, Python, Scala e R.
+- Possibilita streaming de dados em tempo real.
+- É possível rodar em uma única máquina assim como em grandes clusters de computadores.
+- Suporta SQL.
+- Possui bibliotecas para criar aplicações com Machine Learning, MLlib.
+- Realiza processamento de dados em grafos com GraphX.
+- É uma ferramenta open-source.</p>
+<p><a href="https://medium.com/gabriel-luz/spark-101-introdu%C3%A7%C3%A3o-ao-framework-de-processamento-de-dados-distribu%C3%ADdos-1f959e596024">Fonte da informação (clique aqui)</a></p>
+<p><strong>Porque utilizar o formato parquet?</strong></p>
+<p>Usamos  Parquet que é um armazenamento em colunas em geral - Para armazenar dados por colunas para otimizar o desempenho de consultas analíticas e diminuir o custo de armazenamento.</p>
+<p><a href="https://www.infoq.com/br/news/2015/07/apache-parquet/">Fonte da informação (clique aqui)</a></p>
+<ul>
+<li>As ferramentas utilizadas na GCP foram: <strong>Cloud Storage, Dataproc, Postgre, Cassandra(Google click to deploy), Compute Engine, IDE Jupyter</strong>;</li>
+<li>Utilizamos o módulo <strong>Matplotlib</strong> e <strong>HTML</strong> para a criação dos gráficos e análises;</li>
+<li>Utilizamos <strong>Markdown</strong> para a criação da documentação;</li>
+<li>A apresentação foi feita no <strong>Canvas</strong>.</li>
+</ul>
+<p><br></p>
+<h4 id="2-escolha-dos-datasets"><strong>2-</strong> Escolha dos Datasets:</h4>
+<p>Ao todo foram encontrados e escolhidos os seguintes Datasets:</p>
+<ol>
+<li>Exportação X Países (<a href="https://indicadores.agricultura.gov.br/agrostat/index.htm">AGROSTAT</a>) - <strong>Dados: 227</strong></li>
+<li>Exportação X Categoria de produtos (<a href="https://indicadores.agricultura.gov.br/agrostat/index.htm">AGROSTAT</a>) - <strong>Dados: 26</strong></li>
+<li>Exportação X UF (<a href="https://indicadores.agricultura.gov.br/agrostat/index.htm">AGROSTAT</a>) - <strong>Dados: 33</strong>  </li>
+<li>PIB Brasil (<a href="https://www.cepea.org.br/br/pib-do-agronegocio-brasileiro.aspx">CEPEA-PIB Brasil</a>) - <strong>Dados: 25</strong></li>
+<li>U.S. Department of Agriculture (<a href="https://data.ers.usda.gov/reports.aspx?ID=17830">USDA</a>) - <strong>Dados: 112</strong></li>
+<li>Value of Agricultural Production (<a href="https://www.fao.org/faostat/en/#data/QV">FAOSTAT</a>) - <strong>Dados: 3.213.519</strong></li>
+<li>Crops and livestock products (<a href="https://www.fao.org/faostat/en/#data/QCL">FAOSTAT</a>) - <strong>Dados: 3.807.009</strong></li>
+</ol>
+<p><strong>Total de dados:  7.020.951</strong></p>
+<p><br></p>
+<h4 id="3-criacao-do-bd-postgre"><strong>3-</strong> Criação do BD Postgre:</h4>
+<p>Construímos o BD Postgre para ter 8 tabelas e 7 trigger functions que receberam os dados dos datasets. </p>
+<p>O Diagrama Entidade Relacionamento do BD Postgre se encotra a seguir:</p>
+<p><img alt="Imagem" src="derpostgre.png" /></p>
+<p>As Trigger Functions foram utilizadas para realizarem determinados tratamentos nos dados quando inseridos no Banco.</p>
+<pre><code>1- Exemplo de uma das Trigger Functions que foram utilizadas:
+
+CREATE OR REPLACE FUNCTION alterar_valor()
+  RETURNS trigger AS
+$$
+BEGIN
+        UPDATE pib_agricola SET insumo = (New.insumo * 1000000) WHERE id_pib = New.id_pib;
+        UPDATE pib_agricola SET agropecuaria = (New.agropecuaria * 1000000) WHERE id_pib = New.id_pib;
+        UPDATE pib_agricola SET industria = (New.industria * 1000000) WHERE id_pib = New.id_pib;
+        UPDATE pib_agricola SET servicos = (New.servicos * 1000000) WHERE id_pib = New.id_pib;
+        UPDATE pib_agricola SET total = (New.total * 1000000) WHERE id_pib = New.id_pib;
+    RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE TRIGGER tgr_pib_agicola_update
+  AFTER INSERT
+  ON pib_agricola
+  FOR EACH ROW
+  EXECUTE PROCEDURE alterar_valor();
+</code></pre>
+<p><br></p>
+<h4 id="4-tratamento-inicial-dos-datasets-e-insercao-no-postgre"><strong>4-</strong> Tratamento inicial dos datasets e inserção no Postgre:</h4>
+<p>Os tratamentos dos datasets foram realizados com o módulo do pandas do Python e com as Trigger Functions criadas no BD Postgre.</p>
+<p>Alguns dos exemplos de tratamentos com o pandas que utilizamos:</p>
+<pre><code>1- Exclusão de colunas:
+
+df.drop(columns =['Area Code', 'Item Code', 'Element Code','Year Code', 'Flag'], axis =1, inplace = True)
+
+2- Transposto de um DataFrame e a redefinição do índice do mesmo:
+
+pais = pais.T.reset_index()
+
+3- Preenchimento dos valores vazios com o valor &quot;0&quot;:
+
+pais = pais.fillna(0)
+
+</code></pre>
+<p>Para a inserção no Postgre, foi utilizado o módulo <strong>psycopg2</strong> e criamos a Classe <strong>Connectar</strong> com os dois métodos de inserção, listados abaixo:</p>
+<pre><code>1- Método utilizado para a inserção individual de valores:
+
+def inserir(self, table, parametros, valores):
+        query = f&quot;INSERT INTO {table} ({parametros}) VALUES ({valores})&quot;
+        self.acao(query)
+
+2- Método utilizado para a inserção de múltiplos valores:
+
+def inserir_multiples(self, table, parametros, valores):
+    query = f&quot;INSERT INTO {table} ({parametros}) VALUES {valores}&quot;
+    self.acao(query)
+</code></pre>
+<p><strong><em>Desafio encontrado nessa etapa do projeto:</em></strong></p>
+<p>No momento da inserção do maior CSV, com mais de 3 milhões de dados, tivemos que realizar essa inserção em blocos de dados e a nossa solução é apresentada no código abaixo:</p>
+<pre><code>try:
+        df3 = c1.ler_csv('gs://desafio-agricultura/CSV/quantidade(FAO)_final.csv')
+        df3.drop(&quot;Unnamed: 0&quot;, axis=1, inplace=True)
+        df3 = df3.fillna(0)
+
+        tam = df3.shape[0]
+
+        k = 0
+        j = 500000
+
+        while True:
+            arr = np.array(df3)
+            valores = []
+
+            if j &gt; 3000000: 
+                j = 3000000 + (tam - 3000000)
+
+            for i in arr[k:j]:
+                item = (i[0], i[1], i[2], i[3], i[4], i[5])
+                valores.append(item)
+            valores = str(valores)[1:-1]
+            # print(lista_antes)
+            c1.inserir_multiples('quantidade_colheita','pais, item, elemento, ano_quantidade, unidade, valor_quantidade', valores)
+            if j == tam:
+                break
+            j += 500000
+            k += 500000
+    except Exception as e:
+        print(e)
+</code></pre>
+<p><br></p>
+<h4 id="5-selecao-dos-dados-no-postgre-e-criacao-dos-parquet"><strong>5-</strong> Seleção dos dados no Postgre e criação dos Parquet:</h4>
+<p>Para a seleção dos dados presentes no Postgre, utilizamos a API <strong>JDBC</strong> e a interface Pyspark que nos permitiu usar o Spark por meio da linguagem Python. Em uma mesma função(mostrada abaixo) conseguimos ler as informações e transformá-las em Parquet. </p>
+<pre><code>1- Método utilizado para selecionar os dados no BD Postgre e gerar os parquet:
+
+def read_transform_parquet(table_name, path_parquet):
+
+    url = 'jdbc:postgresql://34.95.140.217:5432/desafio_final'
+
+    properties = {
+    'user': 'postgres',
+    'password': 'root',
+    'driver': 'org.postgresql.Driver'
+    }
+
+    df = spark.read.jdbc(url=url, table=table_name, properties=properties)
+
+    df.write.parquet(path_parquet)
+
+    return f&quot;Parquet add in {path_parquet}&quot;
+</code></pre>
+<p><br></p>
+<h4 id="6-criacao-do-bd-cassandra"><strong>6-</strong> Criação do BD Cassandra:</h4>
+<p>No BD Cassandra foram criadas 8 tabelas que receberam os dados presentes no Postgre. Abaixo segue o código da criação da Keyspace e de uma das tabelas criadas:</p>
+<pre><code>1- Código da criação do Keyspace:
+
+create keyspace if not exists desafio_agricultura; 
+with replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+2- Código da criação da tabela do PIB agrícola Brasileiro:
+
+CREATE TABLE IF NOT EXISTS &quot;desafio_agricultura&quot;.&quot;pib_agricola&quot; (
+    id_pib int  primary key,
+    ano_pib text, 
+    insumo float,
+    agropecuaria float,
+    industria float,
+    servicos float,
+    total float 
+);
+</code></pre>
+<p><br></p>
+<h4 id="7-insercao-dos-dados-parquet-no-cassandra"><strong>7-</strong> Inserção dos Dados (parquet) no Cassandra:</h4>
+<p>Para a inserção dos dados no BD Cassandra, utilizamos a API <strong>JDBC</strong> para realizar a conexão com o Banco e <strong>Pyspark</strong> para leitura e tratamento dos dados.</p>
+<pre><code>1- Código que realiza a conexão com o Banco de Dados Cassandra:
+
+spark = SparkSession\
+    .builder\
+    .appName(&quot;Spark Exploration App&quot;)\
+    .config(&quot;spark.jars.packages&quot;, &quot;com.datastax.spark:spark-cassandra-connector_2.12:3.1.0&quot;)\
+    .config(&quot;spark.sql.extensions&quot;,&quot;com.datastax.spark.connector.CassandraSparkExtensions&quot;) \
+    .config(&quot;spark.cassandra.connection.host&quot;,&quot;172.17.0.4&quot;) \
+    .config(&quot;spark.cassandra.connection.port&quot;,&quot;9042&quot;) \
+    .getOrCreate()
+
+2 - Método que realiza a inserção no Cassandra:
+
+def saveData(df, table):
+    df.write \
+        .format(&quot;org.apache.spark.sql.cassandra&quot;) \
+        .option(&quot;keyspace&quot;, keyspace) \
+        .option(&quot;table&quot;, table) \
+        .mode('append') \
+        .save()
+</code></pre>
+<p><br></p>
+<h4 id="8-analise-e-criacao-de-graficos"><strong>8-</strong> Análise e criação de gráficos:</h4>
+<p>Para as análises e a criação dos gráficos, utilizamos as bibliotecas Matplotlib e Seaborn presente no Python e o Google Charts/JavaScript.
+Alguns exemplos dos gráficos gerados podem ser acessados na aba <strong>Análise gráfica</strong>.</p>
+<p><br></p>
+<h4 id="9-documentacao"><strong>9-</strong> Documentação:</h4>
+<p>Nossa documentação foi feita em Markdown.</p>
+     </main>
+
+     <aside class="page-toc" data-js="toc" role="complementary" aria-label="Table of Contents for this page">
+       <button aria-label="Close" class="page-toc__closebtn" data-js="tocCloseCtrl">X</button>
+       <h2 class="page-toc__heading">On this Page:</h2>
+<ul>
+
+    <li class="page-toc__item"><a href="#soulcode-academy" class="page-toc__link" data-js="tocLink" tabindex="0">SoulCode Academy</a></li>
+    
+        <li class="page-toc__item"><a href=".#documentação-do-projeto-final---agricultura" class="page-toc__link" data-js="tocLink" tabindex="0">Documentação do Projeto Final - Agricultura</a></li>
+    
+
+</ul>
+     </aside>
+   
+
+   
+     
+    
+      <a href="brazil.html" class="maincontent__link maincontent__link--next-page">Next: Análise gráfica</a>
+    
+   
+
+    
+    <footer class="footer-main" role="contentinfo">
+      
+    </footer>
+    
+  </div><!-- END .wrapper -->
+  <a class="skiptotop" href="#top">back to top</a>
+
+  
+    
+  
+    <script>var base_url = '.';</script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/theme.js"></script>
+    
+      <script src="search/main.js"></script>
+  
+
+  <!--
+  MkDocs version : 1.2.3
+  docSkimmer theme version: 
+  Build Date UTC : 2022-01-25 20:12:43.007994+00:00
+  -->
+  </body>
+</html>
